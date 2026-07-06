@@ -1,22 +1,21 @@
 class Solution {
   public:
     void segregate0and1(vector<int> &arr) {
-        int left = 0;
-        int right = arr.size() - 1;
-
-        while (left < right) {
-
-            while (arr[left] == 0 && left < right)
-                left++;
-
-            while (arr[right] == 1 && left < right)
-                right--;
-
-            if (left < right) {
-                swap(arr[left], arr[right]);
-                left++;     // add
-                right--;    // add
+        int low=0;
+        int high=arr.size()-1;
+        while(low<high){
+            if(arr[low]==0){
+                low++;
+            }
+            else if(arr[high]==1){
+                high--;
+            }
+            else{
+                swap(arr[low],arr[high]);
+                low++;
+                high--;
             }
         }
+        // code here
     }
 };
